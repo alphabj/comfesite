@@ -13,10 +13,21 @@
 <!-- Don't forget to add Google Analytics -->
 <link rel="icon" href="comfe.ico" type="image/x-icon">
 <link href='http://fonts.googleapis.com/css?family=Arimo:700,700italic' rel='stylesheet' type='text/css' />
+
+<!-- <%= render :partial => "layouts/header" %> -->
+
 </head>
 <body>
 
-<!-- <%= render :partial => "layouts/header" %> -->
+<div id="header" class="relative">
+    <div id="topBar">
+       	<span>
+           	<%= link_to "", root_path, :id => 'home' %>
+            <a id="hands" href="http://www.comfehands.com" target="_blank"></a>
+            <a id="arms" href="comfearms.html"></a>
+        </span>
+    </div>
+</div>
 
 <%= yield %>
 
@@ -25,9 +36,9 @@
       
     <div id="foot_links" class="relative center"> 
         <div id="page_links">
-        	<a href="about.html">About</a>
-            <a href="news.html">News</a>
-            <a href="blog.html">Blog</a>
+        	<%= link_to "About", about_path %>
+            <%= link_to "News", news_path %>
+            <%= link_to "Blog", blog_path %>
             <a href="contact.html">Contact</a>
             <a href="sitemap.html">Sitemap</a>
 		</div>

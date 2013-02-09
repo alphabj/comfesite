@@ -8,6 +8,11 @@ Comfesite::Application.routes.draw do
 
   match 'arms' => 'pages#arms'
   match 'hands' => 'pages#hands'
+  match 'about' => 'pages#about'
+  match 'news' => 'pages#news'
+  match 'blog' => 'pages#blog'
+  match 'contact' => 'pages#contact'
+  match 'sitemap' => 'pages#sitemap'
 
   # Sample of named route:
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
