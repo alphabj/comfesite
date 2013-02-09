@@ -1,14 +1,66 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta property="og:title" content="Comfe Designs" />
+<meta property="og:type" content="products" />
+<meta property="og:site_name" content="Comfe Designs" />
 <head>
-  <title>Comfesite</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title><%=h yield(:title) %></title>
+	<%= stylesheet_link_tag "application", :media => "all" %>
+	<%= javascript_include_tag "application" %>
+	<%= csrf_meta_tags %>
+
+<!-- Don't forget to add Google Analytics -->
+<link rel="icon" href="comfe.ico" type="image/x-icon">
+<link href='http://fonts.googleapis.com/css?family=Arimo:700,700italic' rel='stylesheet' type='text/css' />
 </head>
 <body>
 
+<!-- <%= render :partial => "layouts/header" %> -->
+
 <%= yield %>
+
+
+<div id="footer" class="relative">
+      
+    <div id="foot_links" class="relative center"> 
+        <div id="page_links">
+        	<a href="about.html">About</a>
+            <a href="news.html">News</a>
+            <a href="blog.html">Blog</a>
+            <a href="contact.html">Contact</a>
+            <a href="sitemap.html">Sitemap</a>
+		</div>
+            
+        <div id="location" class="absolute">
+        	<a class="lefted" href="http://bit.ly/VRAM6g" target="_blank">Located in Greenville, SC</a>
+		</div>           
+            
+		<img id="flag" class="absolute" src="<%= asset_path('flag.png') %>" width="49" height="36" />
+	</div>
+                
+    <div id="about" class="relative center">
+	<div id="top"></div>
+    <div id="mid">
+   		<img id="logo" src="<%= asset_path('logo.png') %>" class="lefted" width="107" height="53" />
+    	
+        <p class="lefted"><strong style="color: #5c7078;">About Comfe Designs</strong>: We are a design firm specializing in consumer electronics experience. Our creations focus on novel experiences that are highly functional, fashionable, and ergonomic.</p>
+
+        <p class="lefted">Everyday gadgets should feel as good as they look. Comfe Designs strives to make people smile&#8212;and keep them smiling&#8212;with every experience.</p>
+	</div>
+                
+	<div id="btm"></div>
+        
+	<div id="credits" class="relative center">
+		<p class="lefted">TM &amp; &copy; 2012 Comfe Designs LLC. All Rights Reserved. </p>
+	            
+		<span class="righted">
+	    	<a href="legal.html">Terms of Use</a>
+	        <a href="legal.html" style="margin-right: 0;">Privacy Policy</a>
+	    </span>
+	</div>
+    
+</div>
 
 </body>
 </html>
