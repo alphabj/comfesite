@@ -1,0 +1,23 @@
+<%= content_for :head, (render :partial => 'layouts/partials/basiclayoutsheets') %>
+
+<%= render :partial => 'layouts/partials/stdheader' %>
+
+<% stylesheets 'informatic', 'contact', :media => "all" %>
+
+<div class="informatic">
+    <h1>Comfe Contact</h1>
+    <div id="map" class="lefted">
+        <h2>currently in: <span style="color: #1e81de;">Kona</span>, <span style="color: #ff9000;">Hawaii</span></h2>
+        <iframe width="600" height="325" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Kailua-Kona,+HI&amp;aq=1&amp;oq=kai&amp;sll=20.46,-157.505&amp;sspn=6.985265,11.645508&amp;ie=UTF8&amp;hq=&amp;hnear=Kailua-Kona,+Hawaii&amp;ll=19.640556,-155.995556&amp;spn=1.75494,2.911377&amp;t=m&amp;z=9&amp;output=embed"></iframe>
+    </div>
+    <div id="locale" class="righted">
+        <h3>info'at'comfedesigns'dot'com</h3>
+        <h2>864-513-1444</h2>
+        <h3 style="margin-top:40px;">mail:</h3>
+        <h2>112 Raintree Drive<br />
+            Taylors, SC 29687
+        </h2>
+    </div>
+    
+    <p id="explaination">Kona is home to the <%= link_to "IRONMAN", 'http://www.ironman.com', :target => '_blank' %> triathlon. Some of the world's best and most extreme athletes run, bike, and swim on the "Big Island". We're here for their feedback on our new project. (Okay, and it's really nice here too!)</p>
+</div>

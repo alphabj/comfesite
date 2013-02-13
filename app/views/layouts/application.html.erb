@@ -6,31 +6,25 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title><%=h yield(:title) %></title>
-	<%= stylesheet_link_tag "application", :media => "all" %>
-	<%= javascript_include_tag "application" %>
-	<%= csrf_meta_tags %>
+  
+<%= yield(:head) %>
+<%= javascript_include_tag "application" %>
+<%= csrf_meta_tags %>
 
 <!-- Don't forget to add Google Analytics -->
+
 <link rel="icon" href="comfe.ico" type="image/x-icon">
 <link href='http://fonts.googleapis.com/css?family=Arimo:700,700italic' rel='stylesheet' type='text/css' />
-
-<!-- <%= render :partial => "layouts/header" %> -->
-
 </head>
+
+
 <body>
 
-<div id="header" class="relative">
-    <div id="topBar">
-       	<span>
-           	<%= link_to "", root_path, :id => 'home' %>
-            <a id="hands" href="http://www.comfehands.com" target="_blank"></a>
-            <a id="arms" href="comfearms.html"></a>
-        </span>
-    </div>
-</div>
+<div id="body" class="relative">
 
 <%= yield %>
 
+</div>
 
 <div id="footer" class="relative">
       
@@ -39,12 +33,12 @@
         	<%= link_to "About", about_path %>
             <%= link_to "News", news_path %>
             <%= link_to "Blog", blog_path %>
-            <a href="contact.html">Contact</a>
-            <a href="sitemap.html">Sitemap</a>
+            <%= link_to "Contact", contact_path %>
+            <%= link_to "Sitemap", sitemap_path %>
 		</div>
             
         <div id="location" class="absolute">
-        	<a class="lefted" href="http://bit.ly/VRAM6g" target="_blank">Located in Greenville, SC</a>
+        	<%= link_to "Located in Greenville, SC", "http://bit.ly/VRAM6g", :class => 'lefted', :target => '_blank' %>
 		</div>           
             
 		<img id="flag" class="absolute" src="<%= asset_path('flag.png') %>" width="49" height="36" />

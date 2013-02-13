@@ -1,0 +1,23 @@
+<div id="header" class="relative">
+    <div id="topBar">
+        <span>
+            <%= link_to "", root_path, :id => 'home' %>
+            <%= link_to "", hands_path, :id => 'hands', :target => '_blank' %>
+            <%= link_to "", arms_path, :id => 'arms' %>
+        </span>
+    </div>
+
+    <div class="center relative" id="prod_identity">
+        <img id="prod_logo" src="<%= asset_path('carms_logo.png') %>" width="360" height="58" class="absolute"/>
+        <h3 class="absolute" id="coming_soon">coming soon!</h3>   
+    </div>
+      
+    <div class="center relative" id="prod_display">
+        <img src="<%= asset_path('comfe_arms_banner_v2_01.png') %>" width="199" height="331" class="absolute rollin" style="top: 110px; left:-50px;"/>
+        <img src="<%= asset_path('comfe_arms_banner_v2_03.png') %>" width="365" height="331" class="absolute rollin" style="top: 110px; left:200px"/>
+        <img src="<%= asset_path('comfe_arms_banner_v2_05.png') %>" width="173" height="331" class="absolute rollin" style="top: 110px; left:625px"/>
+    </div>
+</div>
+
+
+    

@@ -1,0 +1,105 @@
+<% content_for :title, "Comfe Hands" %>
+
+<%= content_for :head, (render :partial => 'layouts/partials/handslayoutsheets') %>
+
+<%= render :partial => 'layouts/partials/handsheader' %>
+
+<div id="helloWorld" class="relative center">
+    
+    <div id="wom" class="absolute">
+        <h2 class="wom"><span class="openBrace">&#8220;</span>What a terrific product! Thank you.<span class="closeBrace">&#8221;</span> <span class="sig"><a href="https://www.facebook.com/becomfe?ref=hl" target="_blank">Ira Heffler, via Facebook</a></span></h2>
+        <h2 class="wom"><span class="openBrace">&#8220;</span>Four stars out of five.<span class="closeBrace">&#8221;</span> <span class="sig"><a href="http://the-gadgeteer.com/2012/06/19/comfe-hands-for-ipad-review/" target="_blank">The Gadgeteer</a></span></h2>
+        <h2 class="wom"><span class="openBrace">&#8220;</span>so simple it's almost genius.<span class="closeBrace">&#8221;</span> <span class="sig"><a href="http://www.padgadget.com/2012/04/27/comfe-hands-help-ipad-users-get-a-grip-ipad-gear-review/" target="_blank">Pad Gadget</a></span></h2>
+    	
+   	</div>
+    
+    <div class="absolute" id="amazon"><a id="order_btn" target="_blank" href=	"http://www.amazon.com/Comfe-Designs-1-Hands/dp/B0060MRBAY/ref=sr_1_1?ie=UTF8&qid=1320034185&sr=8-1"></a></div>
+    
+    <img class="absolute nowshowing" id="frontface" src="<%= asset_path('frontface.png') %>" width="459" height="515" />
+    <img class="absolute" id="backshot" src="<%= asset_path('backshot.png') %>" width="364" height="515" />
+    <img class="absolute" id="piano" src="<%= asset_path('piano.png') %>" width="600" height="201" /> 
+    
+    <a class="absolute" id="videoClose"></a>
+    <div id="videoBtn" class="absolute">
+        <iframe id="comfeVideo" width="853" height="480" src="http://www.youtube.com/embed/e-rcZFEcjgM" frameborder="0" allowfullscreen></iframe>	
+    </div>
+    
+</div>
+
+<div id="message" class="relative center">
+    <ul class="slides">
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+		
+    <h1>Get a grip on your tablet</h1>
+    <h1>We're bringing comfy back</h1>
+    <h1>Relax. Get Comfe.</h1>
+           
+</div>
+
+<div id="details" class="relative center">     
+    <span id="detail_links">
+    	<a id="features" href="#feats"></a>
+        <a id="design" href="#des"></a>
+        <a id="everyone" href="#every"></a>
+    </span>
+    
+    <div id="feats">
+        <div class="relative lefted">
+        	<img src="<%= asset_path('incline.png') %>" width="484" height="229" />
+        </div>
+        
+        <div class="righted">
+            <h3 id="checkbox">Features &amp; Benefits</h3>
+            <p>Love holding on to your iPad, even for extended periods of time. Comfe Hands gives your tablet a shape that fits your hand's natural contours with a soft, gripping feel. It can even make the iPad feel lighter.</p>
+            <p>Comfe Hands has a beautiful design that compliments any iPad 2 or new iPad (3). The specially engineered surface allows a firm, no-slip hold. The intuitive push-on construction fits on any side and is easy to use. Comfe Hands doubles as an incline stand, triples as a vertical stand, and quadruples as a protective bumper with one on each side.</p>
+        </div>
+
+    </div>
+    
+    <div id="des">
+
+        <div class="lefted">
+            <h3 id="inspired">Curves Inspired by Nature</h3>
+            <p>We heard it was <a href="https://www.google.com/search?q=ipad+ergonomics&ie=utf-8&oe=utf-8&aq=t&rls=org.mozilla:en-US:official&client=firefox-a" target="_blank">hard to hold</a> the iPad. It's true: Organic shapes are easier to grasp because the human hand fits a rounded surface. Most accessories are flat with tiny rounded corners. The edges feel like sharp razors after holding them even for a little while.</p>
+            <p>Comfe Hands has curves that turn the painful pinch grip into a power grip. And like human skin, Comfe Hands is soft to the touch. Guess you could say the iPad is now more well-endowed. Comfe Hands is inspired by nature and beautifully designed for iPad 2.</p>
+        </div>
+        
+        <div class="righted relative">
+        	<img src="<%= asset_path('glad_hand.png') %>" id="glad_hand" width="386" height="309" />
+            <a id="gallery_link" rel="group1" href="<%= asset_path('twohands.png') %>" class="absolute"></a>
+            <a rel="group1" href="<%= asset_path('gameplay.png') %>"></a>
+            <a rel="group1" href="<%= asset_path('gallery_guy.png') %>"></a>
+            <a rel="group1" href="<%= asset_path('reading.png') %>"></a>
+            <a rel="group1" href="<%= asset_path('piano_layout.png') %>"></a>
+            <a rel="group1" href="<%= asset_path('onehanded.png') %>"></a>
+            <a rel="group1" href="<%= asset_path('flat_seperate.png') %>"></a>
+        </div>
+
+    </div>
+    
+    <div id="every">
+    	<div class="lefted relative">
+        	<img src="<%= asset_path('pointer.png') %>" id="skyscraper" class="nowShowing absolute" width="400" height="304"/>
+            <img src="<%= asset_path('zen.png' %>" id="zen" class="absolute" width="323" height="376"/>
+            <img src="<%= asset_path('nurse.png') %>" id="nurse" class="absolute" width="300" height="360"/>
+            <div id="bartop" class="absolute">
+                <ul id="slideshow">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+			</div>
+        </div>
+        
+        <div class="righted relative">
+            <h3 id="exclusive">Everyone Deserves to be Comfe</h3>
+            <p>Everyone&#8212;students, artists, gamers, business or medical professionals&#8212;everyone has hands that could use a little more love. Comfe Hands was made for anyone who uses iPad.</p>
+            <p>Relax while you surf and work. Get a handle on your favorite game. Comfe Hands works great at a desk or even in the kitchen. Make life easier for yourself.</p>
+            <p><em>Get control. Get style. Get comfe.</em></p>
+        </div>
+
+    </div>                            
+</div>

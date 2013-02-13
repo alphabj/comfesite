@@ -1,65 +1,67 @@
+<%= content_for :head, (render :partial => 'layouts/partials/basiclayoutsheets') %>
+
+<%= render :partial => 'layouts/partials/stdheader' %>
+
+<% stylesheets 'informatic', 'about', :media => "all" %>
+
 <!--<h1>Comfe Life</h1>-->
 
-<div id="body" class="relative">
+<div id="bigpicture">
+    <img class="carousel" src="<%= asset_path('about_bkg_1.png') %>" width="1000" height="510" />
+    <img class="carousel" src="<%= asset_path('about_bkg_2.png') %>" width="1000" height="510" />
+    <img class="carousel" src="<%= asset_path('plane.png') %>" width="1004" height="510" />
 
-    <div id="bigpicture">
-        <img class="carousel" src="<%= asset_path('about_bkg_1.png') %>" width="1000" height="510" />
-        <img class="carousel" src="<%= asset_path('about_bkg_2.png') %>" width="1000" height="510" />
-        <img class="carousel" src="<%= asset_path('plane.png') %>" width="1004" height="510" />
-    
-        <span>
-            <a class="smooth" href="#team">Work & Team</a>
-            <a class="smooth" href="#design">Design</a>
-            <a class="smooth" href="#story" style="margin-right: 0;">The Story</a>
+    <span>
+        <%= link_to 'Work & Team', "#team", :class => 'smooth' %>
+        <%= link_to 'Design', "#design", :class => 'smooth' %>
+        <%= link_to 'The Story', "#story", :style => "margin-right: 0;" %>
+    </span>
+</div>
+
+<ul id="slideshow" class="slides">
+    <li class="selected"></li>
+    <li></li>
+    <li style="margin-right: 0;"></li>
+</ul>
+
+<div class="informatic">
+    <div class="secondarytitle" id="team">
+      <h2>Comfe Team</h2>
+      <h3>Believe. Lead. Change.</h3>
+        <span class="stacked">
+            <ul>
+                <li><img src="<%= asset_path('team_42.png') %>" width="96" height="96"/></li>
+                <li><img src="<%= asset_path('team_44.png') %>" width="96" height="96" /></li>
+            </ul>
+            <p>Comfe Designs is a team of product designers and tech entrepreneurs. We are creating accessories that are just as desirable as the latest tech gadgets. Our work is diverse: material science, product design, manufacturing, robotics, software, etc. We turn ideas into products.</p>
+            <p>We're looking for pros to join our team. Send an email and tell us what you're good at: info'at'comfedesigns'dot'com.</p>
         </span>
     </div>
+</div>
+
     
-    <ul id="slideshow" class="slides">
-        <li class="selected"></li>
-        <li></li>
-        <li style="margin-right: 0;"></li>
-    </ul>
+<div class="informatic">
+    <div class="secondarytitle" id="design">
+      <h2>Comfe Design</h2>
+      <h3>Love. Travel. Make.</h3>
+        <span class="stacked">
+            <p>We focus on products for <em>people</em>, not products for other products. We were tired of seeing accessories made for phones and tablets instead of the people that use them. The philosophy behind all of our ideas is simple.</p>
+            <p><em>Love People</em>. A keen interest in the world's people and in meeting their needs.</p>
+            <p><em>Travel to See Them</em>. Design in places where customers use our products--where they live and work. Traveling is one of the most inspirational parts of the work. We try not to have offices.</p>
+            <p><em>Make Them Great Products</em>. What better way to create happiness than to give someone something that makes their life better?</p>
+        </span>
+    </div>
+</div>
     
-    <div class="informatic">
-        <div class="secondarytitle" id="team">
-          <h2>Comfe Team</h2>
-          <h3>Believe. Lead. Change.</h3>
-            <span class="stacked">
-                <ul>
-                    <li><img src="<%= asset_path('team_42.png') %>" width="96" height="96"/></li>
-                    <li><img src="<%= asset_path('team_44.png') %>" width="96" height="96" /></li>
-                </ul>
-                <p>Comfe Designs is a team of product designers and tech entrepreneurs. We are creating accessories that are just as desirable as the latest tech gadgets. Our work is diverse: material science, product design, manufacturing, robotics, software, etc. We turn ideas into products.</p>
-                <p>We're looking for pros to join our team. Send an email and tell us what you're good at: info'at'comfedesigns'dot'com.</p>
-            </span>
-        </div>
-    </div>
     
-        
-    <div class="informatic">
-        <div class="secondarytitle" id="design">
-          <h2>Comfe Design</h2>
-          <h3>Love. Travel. Make.</h3>
-            <span class="stacked">
-                <p>We focus on products for <em>people</em>, not products for other products. We were tired of seeing accessories made for phones and tablets instead of the people that use them. The philosophy behind all of our ideas is simple.</p>
-                <p><em>Love People</em>. A keen interest in the world's people and in meeting their needs.</p>
-                <p><em>Travel to See Them</em>. Design in places where customers use our products--where they live and work. Traveling is one of the most inspirational parts of the work. We try not to have offices.</p>
-                <p><em>Make Them Great Products</em>. What better way to create happiness than to give someone something that makes their life better?</p>
-            </span>
-        </div>
+<div class="informatic">
+    <div class="secondarytitle" id="story">
+      <h2>Comfe Story</h2>
+      <h3>The Beginning</h3>
+        <span class="stacked">
+            <p>2011: Comfe starts with a product idea for iPads and a cardboard model. People said, "Wow! This is really comfy!" And the name stuck. (We added "e" for electronics.) We were software geeks wanting to make accessories that we liked but couldn't get. The business model was born: develop high quality accessories for professionals.</p>
+            <p>2012: Competing with pit bulls like Belkin and Logitech meant focusing on meeting the needs of the most demanding customers. We traveled to Hawaii and spent several months working with triathlon athletes to build Comfe Arms.</p>
+            <p>Today: Our dream is to build the most exciting accessories company we have ever heard of. We focus on novel ideas and materials to build exceptional products you have never seen before.</p>
+        </span>
     </div>
-        
-        
-    <div class="informatic">
-        <div class="secondarytitle" id="story">
-          <h2>Comfe Story</h2>
-          <h3>The Beginning</h3>
-            <span class="stacked">
-                <p>2011: Comfe starts with a product idea for iPads and a cardboard model. People said, "Wow! This is really comfy!" And the name stuck. (We added "e" for electronics.) We were software geeks wanting to make accessories that we liked but couldn't get. The business model was born: develop high quality accessories for professionals.</p>
-                <p>2012: Competing with pit bulls like Belkin and Logitech meant focusing on meeting the needs of the most demanding customers. We traveled to Hawaii and spent several months working with triathlon athletes to build Comfe Arms.</p>
-                <p>Today: Our dream is to build the most exciting accessories company we have ever heard of. We focus on novel ideas and materials to build exceptional products you have never seen before.</p>
-            </span>
-        </div>
-    </div>
-        
 </div>

@@ -13,6 +13,8 @@ Comfesite::Application.routes.draw do
   match 'blog' => 'pages#blog'
   match 'contact' => 'pages#contact'
   match 'sitemap' => 'pages#sitemap'
+  match 'legal' => 'pages#legal'
+  match 'faq' => 'pages#faq'
 
   # Sample of named route:
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase

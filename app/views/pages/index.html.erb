@@ -1,25 +1,26 @@
-<!--<% content_for :title, "Comfe Designs" %> -->
-    
-<div id="body" class="relative">
-	<div id="headline" class="relative">
-		<a href="http://www.comfehands.com" target="_blank">
-            <img id="main_line" width="600" height="94" src="<%= asset_path('headlines_1.png') %>" />
-            <img class="carousel" width="557" height="502" src="<%= asset_path('headlines_3.png') %>" />
-            <img class="carousel" src="<%= asset_path('gameplay.png') %>" width="550" height="386" />
-            <img class="carousel" src="<%= asset_path('piano_layout.png') %>" width="600" height="201" />
-        </a> 
-    </div>
-        
-	<ul id="slideshow" class="slides">
-    	<li class="selected"></li>
-        <li></li>
-        <li style="margin-right: 0;"></li>
-	</ul>
-        
-    <div id="detail_links">
-    	<a id="features" href="http://www.comfehands.com/#feats"></a>
-        <a id="design" href="http://www.comfehands.com/#des"></a>
-        <a id="everyone" href="http://www.comfehands.com/#every"></a>
-    </div>
+<%= content_for :head, (render :partial => 'layouts/partials/basiclayoutsheets') %>
 
+<%= render :partial => 'layouts/partials/stdheader' %>
+
+<% content_for :title, "Comfe Designs" %>
+    
+<div id="headline" class="relative">
+	<a href="http://www.comfehands.com" target="_blank">
+        <img id="main_line" width="600" height="94" src="<%= asset_path('headlines_1.png') %>" />
+        <img class="carousel" width="557" height="502" src="<%= asset_path('headlines_3.png') %>" />
+        <img class="carousel" src="<%= asset_path('gameplay.png') %>" width="550" height="386" />
+        <img class="carousel" src="<%= asset_path('piano_layout.png') %>" width="600" height="201" />
+    </a> 
+</div>
+    
+<ul id="slideshow" class="slides">
+	<li class="selected"></li>
+    <li></li>
+    <li style="margin-right: 0;"></li>
+</ul>
+    
+<div id="detail_links">
+	<%= link_to '', "http://www.comfehands.com/#feats", :id => "features" %>
+    <%= link_to '', "http://www.comfehands.com/#des", :id => "design" %>
+    <%= link_to '', "http://www.comfehands.com/#every", :id=> "everyone" %>
 </div>
