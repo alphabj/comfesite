@@ -1,9 +1,6 @@
-<%= content_for :head, (render :partial => 'layouts/partials/basiclayoutsheets') %>
-
+<% content_for :title, "Comfe Designs" %>
 <%= render :partial => 'layouts/partials/stdheader' %>
 
-<% content_for :title, "Comfe Designs" %>
-    
 <div id="headline" class="relative">
 	<a href="http://www.comfehands.com" target="_blank">
         <img id="main_line" width="600" height="94" src="<%= asset_path('headlines_1.png') %>" />
@@ -20,7 +17,7 @@
 </ul>
     
 <div id="detail_links">
-	<%= link_to '', "http://www.comfehands.com/#feats", :id => "features" %>
-    <%= link_to '', "http://www.comfehands.com/#des", :id => "design" %>
-    <%= link_to '', "http://www.comfehands.com/#every", :id=> "everyone" %>
+	<%= link_to '', hands_path(@hands, :anchor => 'feats'), :id => "features" %>
+    <%= link_to '', hands_path(@hands, :anchor => 'des'), :id => "design" %>
+    <%= link_to '', hands_path(@hands, :anchor => 'every'), :id => "everyone" %>
 </div>

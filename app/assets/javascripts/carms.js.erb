@@ -1,6 +1,10 @@
 // ©2012 Comfe Designs LLC.
 
 
+//note to self...for any of the animation sections, make sure you check for the "selecting" variable first
+//before you allow the code to run. Don't want any random clicks during an animation to screw up the logic.
+
+
 $(function(){
 
 
@@ -49,7 +53,7 @@ $(function(){
 			//animate out the background
 			select_bkg.animate({'margin-left' : '-=65px', 'opacity':'0'}, main_anim_speed, function(){ $(this).css({'display':'none'}) });
 			//animate out the main title below the main image 
-			$('#body h1').animate({'opacity':'0', 'margin-left':'-=35px'}, main_anim_speed);
+			$('#punchline').animate({'opacity':'0', 'margin-left':'-=35px'}, main_anim_speed);
 			//set a slight delay for the new window to fade in
 			setTimeout(function(){
 				config.animate({'opacity':'1', 'margin-left':'0'}, main_anim_speed, function(){
@@ -58,7 +62,8 @@ $(function(){
 					//configureHelper();//add vars for function call if needed
 					selecting = false;
 					selected = true;
-			}); }, 200);
+			}).css('display','block'); 
+			}, 200);
 		} 
 		return 0;	
 	}
@@ -160,7 +165,7 @@ $(function(){
 				setConfigColor('blue');
 				//animate the whole div up
 				$('#configuration').animate({'opacity':'0', 'margin-top':'-=65px'}, 600, function(){ 
-					$(this).css('display','none'); 
+					$(this).css('display','none');
 				});
 				//remove visibility on buy and next buttons 
 				$('#next').animate({'opacity':'0'}, 600, function(){ $(this).css('display', 'none'); });
@@ -168,6 +173,7 @@ $(function(){
 					$(this).css('display', 'none');
 					selecting = false;
 					configured = true;
+					animateCardDetails();
 				});	
 			}
 		}
@@ -202,31 +208,68 @@ $(function(){
 	
 	//handles start up animation of the payment form
 	function animateCardDetails() {
-		setTimeout(function(){
-			$('#form_instruction').fadeIn(300);
-			$('#simplepayment-form').fadeIn(300);	
-		}, 200);
+		if (selecting == false) {
+			selecting = true;
+			setTimeout(function(){
+				$('#form_instruction').fadeIn(300);
+				$('#card_details').css('display','inline-block'); 
+				$('#simplepayment-form').fadeIn(300);
+				selecting = false;
+			}, 200);
+		} 
 		return 0;
 	}
 	
-	function  animatePmtOptions() {
-		
-		//pmt form isn't initialized 
-		if ($(#shipping-info button).attr('name') == 'shipping') {
-		$('#card_details').fadeOut();
-		$('#customer_details').fadeIn();
-		//set the btn attr
-		} else if ( ) {
-		//else if the pmt form is initialized, switch to address
-			//fade out $('#customer_details');
-			//fade in  $('#shipping location');
-			//set the button .attr();
+	function animatePmtOptions() {
+		if (selecting == false) {
+			selecting = true;
+			var button = $('#simplepayment-form button');
+			
+			//pmt form isn't initialized 
+			if (button.attr('name') == 'shipping') {
+				$('#card_details').fadeOut(function(){ 
+					setFormInstruction('Please enter your address information.'); 
+					$('#customer_details').fadeIn();	
+					setPmtBtnName('address');
+					setPmtBtnTxt('Finish');
+					selecting = false;
+				});
+			} 
+			//ready to enter address details
+			else if (button.attr('name') == 'address') {
+				$('#form_instruction').fadeOut();
+				$('#simplepayment-form').fadeOut(function(){ 
+					selecting = false;
+					alert('processing payment');
+					cancelOrder();
+				});
+			}
+			//the alternate shipping address check box has been checked
+			else if (button.attr('name') == 'altship') {
+				$('#customer_details').fadeOut(function(){ 
+					setFormInstruction('Please enter the alternate shipping information.'); 
+					$('#altship').fadeIn();
+					setPmtBtnName('finished');
+					setPmtBtnTxt('Finish');
+					selecting = false;
+				});
+			}
+			
+			//else ready to submit
+			else if (button.attr('name') == 'finished') {
+				$('#form_instruction').fadeOut(300);
+				$('#simplepayment-form').fadeOut(300, function(){ 
+					selecting = false; 
+					alert('processing payment');
+					cancelOrder();
+		 		});
+				//submit pmt detail to stripe with callback for finish
+				//play a gif animation		
+			}
+			
+			//otherwise handle the error
+			else { alert('an error has occured'); }
 		}
-		//else alternate shipping is checked
-			//fade out shipping location
-			//fade in alternate shipping
-			//set the button to submit		
-		
 		return 0;	
 	}
 	
@@ -237,6 +280,20 @@ $(function(){
 		//display thanks and next steps upon success
 	}
 	
+	function setFormInstruction(message){
+		$('#form_instruction').text(message);
+		return 0;	
+	}
+	
+	function setPmtBtnName(name){
+		$('#simplepayment-form button').attr('name', name);
+		return 0;	
+	}
+	
+	function setPmtBtnTxt(txt){
+		$('#simplepayment-form button').text(txt);
+		return 0;
+	}
 	/* END PAYMENT FORM ANIMATIONS AND LOGIC */
 
 	
@@ -266,7 +323,7 @@ $(function(){
 			select_bkg.css({'display':'block'}).animate({'margin-left' : '+=65px', 'opacity':'1'}, 600);
 			prod_selections.css({'display':'block'}).animate({'margin-left' : '+=45px', 'opacity':'1'}, 600);
 			selection_links.css({'opacity':'1'});
-			$('#body h1').animate({'opacity':'1', 'margin-left':'+=35px'}, 600, function(){
+			$('#punchline').animate({'opacity':'1', 'margin-left':'+=35px'}, 600, function(){
 				selected = selecting = configured = false;
 			}); 
 		}, timeCount);
@@ -277,6 +334,8 @@ $(function(){
 	function resetConfigurator(timeCount){
 		//fade prod config
 		config.animate({'opacity':'0', 'margin-left':'+=30px'}, 400, function() {
+			$(this).css('display','none');
+			
 			setTimeout(function(){		
 				$('#configuration').css({'opacity':'1', 'margin-top':'35px', 'display':'block'}, 600);
 				$('#next').css({'display':'inline-block', 'opacity':'1'});
@@ -302,22 +361,49 @@ $(function(){
 		return 0;
 	}
 	
+	//resets check box and the associated variable
+	function resetCheckBox(){
+		altshipboxchecked = false;
+		$('input[name=new_shipping]').attr('checked', false);
+		return 0;
+	}
+	
 	//handles display animation of form
 	function resetForm(timeCount){
 		setTimeout(function(){
 			//reset form display options
 			$('#simplepayment-form').fadeOut(function(){ 
-				$('#form_instruction').css('display','none');
+				
+				//reset display of the form sections
+				$('.form-section').css('display','none');
+				
+				//reset display of the inputs of all form elements
+				$('#simplepayment-form input').attr('value','');
+				
+				//reset check box for additional shipping and it's variable
+				resetCheckBox();
+				
+				//reset the product count
 				$('#config_count').attr('value','1');
+				
+				//reset the form instruction display
+				$('#form_instruction').css('display','none');
+				
+				//reset the form instruction message
+				setFormInstruction('Please enter your card details.')
+				
+				//reset the button name
+				setPmtBtnName('shipping');
+				
+				//reset the button text
+				setPmtBtnTxt('Next');
+				
 			});
-			
-			//reset all vars
+			//reset all vars in the product object
 			product = [];
-			
 		}, timeCount);
 		return 0;
 	}
-	
 	
 	/* END CANCEL ORDER BTN LOGIC */
 	
@@ -341,7 +427,7 @@ $(function(){
 	//choose band color
 	band_color.click(function(e){
 		e.preventDefault();
-		colorConfigure($(this)); 
+		colorConfigure($(this));
 	});
 	
 	//choose band highlight 
@@ -354,7 +440,20 @@ $(function(){
 	$('#buy').click(function(e){
 		e.preventDefault();
 		buySelection();
-		animateCardDetails();
+	});
+	
+	//shipping checkbox is clicked
+	var altshipboxchecked = false;
+	$("input[name='new_shipping']").live('click', function(){ //may want to check on something different...such as unclick
+		if(altshipboxchecked == false) {
+			altshipboxchecked = true;
+			setPmtBtnTxt('Next');
+			setPmtBtnName('altship');
+		} else {
+			setPmtBtnTxt('Finish');
+			setPmtBtnName('address');
+			altshipboxchecked = false;
+		}
 	});
 	
 	//click the add to cart link
@@ -387,5 +486,102 @@ $(function(){
 	var customer_details = '<div id="#fatMan"></div>'
 	
 		// btn type="submit" class="submit-button"
+		
+		
+	/********* FADE IN BANNER IMAGES UPON LOAD **********/
+	//fade in the first
+	$('.rollin:eq(0)').animate({
+			'left':'+=100px',
+			'opacity':'1'
+	},1100);
+	
+	//animate left and fade in at same time
+	setTimeout(function(){
+		$('.rollin:eq(1)').animate({
+			'left':'+=100px',
+			'opacity':'1'	
+		}, 900);
+	}, 700);
+	
+	//fade in the third with a timer
+	setTimeout(function(){
+		$('.rollin:eq(2)').animate({
+			'left':'+=100px',
+			'opacity':'1'	
+		}, 900);
+	}, 1250);
+	
+	
+	
+	/*EMAIL FORM CONTROLS*/
+	var operating = false;
+	$('form').mouseover(function(){
+		if (email_clicked == false && operating == false) {
+			operating = true;
+			$(this).animate({opacity : 1}, 150, function(){operating = false;});
+			$('.email').css({  
+				'background-image' : "<%= asset_path 'top_foot_block.png' %>",
+				'background-position' : '-303px 0',
+				'background-repeat' : 'no-repeat'
+			});
+			$('#submit').css ({ 
+				'background-image' : "<%= asset_path 'top_foot_block.png' %>",
+				'background-position' : '-992px 0',
+				'background-repeat' : 'no-repeat' 
+			});
+		}
+		
+	}).mouseout(function(){
+		if (email_clicked == false && operating == false) {
+			$(this).animate({opacity: .5}, 150, function(){operating = false;});
+			$('.email').css({ 
+				'background-image' : "<%= asset_path 'top_foot_block.png' %>",
+				'background-position' : '0 0',
+				'background-repeat' : 'no-repeat'
+			});
+			$('#submit').css ({ 
+				'background-image' : "<%= asset_path 'top_foot_block.png' %>",
+				'background-position' : '-906 0',
+				'background-repeat' : 'no-repeat' 
+			});
+		}
+	
+	});
+	
+	var email_clicked = false;
+	$('.email').click(function(){
+		if (email_clicked == false) {
+			email_clicked = true;
+			$('form').animate({opacity:1}, 200);
+			$(this).attr('value', "");
+		}		
+		$(this).css({ 
+			'color' : '#52a7cd',
+			'background-image' : "<%= asset_path 'top_foot_block.png' %>",
+			'background-position' : '-606px 0',
+			'background-repeat' : 'no-repeat'
+		});
+		$('#submit').css({
+			'background-image' : "<%= asset_path 'top_foot_block.png' %>",
+			'background-position' : '-1077px 0',
+			'background-repeat' : 'no-repeat' 
+		})
+		//do error checking on submit.
+	});
+	
+	var unClicked = true;
+	$('#submit').click(function(){
+		if (unClicked == true) {
+			unClicked = false;
+			if(	$('.email').val() == 'sign up for updates' || $('.email').val() == ' ' || $('.email').val() == ''){
+					$('form').attr('action', '');
+				}
+			$('form').fadeOut(300, function(){
+				$('iframe').before('<h3 class="center">Thanks! TTY soon.</h3>').fadeIn(300);
+			});
+		}
+	});
+
+	/*END EMAIL FORM CONTROLS*/
 
 });

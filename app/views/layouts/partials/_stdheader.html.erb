@@ -1,9 +1,5 @@
+<% content_for :head, (render :partial => 'layouts/partials/basiclayoutsheets') %>
+
 <div id="header" class="relative">
-    <div id="topBar">
-        <span>
-            <%= link_to "", root_path, :id => 'home' %>
-            <%= link_to "", hands_path, :id => 'hands', :target => '_blank' %>
-            <%= link_to "", arms_path, :id => 'arms' %>
-        </span>
-    </div>
+    <%= render :partial => 'layouts/partials/topbar' %>
 </div>

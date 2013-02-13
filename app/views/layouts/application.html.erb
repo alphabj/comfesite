@@ -8,6 +8,7 @@
 <title><%=h yield(:title) %></title>
   
 <%= yield(:head) %>
+
 <%= javascript_include_tag "application" %>
 <%= csrf_meta_tags %>
 
@@ -20,52 +21,53 @@
 
 <body>
 
-<div id="body" class="relative">
+    <div id="body" class="relative">
 
-<%= yield %>
+    <%= yield %>
 
-</div>
+    </div>
 
-<div id="footer" class="relative">
-      
-    <div id="foot_links" class="relative center"> 
-        <div id="page_links">
-        	<%= link_to "About", about_path %>
-            <%= link_to "News", news_path %>
-            <%= link_to "Blog", blog_path %>
-            <%= link_to "Contact", contact_path %>
-            <%= link_to "Sitemap", sitemap_path %>
-		</div>
-            
-        <div id="location" class="absolute">
-        	<%= link_to "Located in Greenville, SC", "http://bit.ly/VRAM6g", :class => 'lefted', :target => '_blank' %>
-		</div>           
-            
-		<img id="flag" class="absolute" src="<%= asset_path('flag.png') %>" width="49" height="36" />
-	</div>
+    <div id="footer" class="relative">
+          
+        <div id="foot_links" class="relative center"> 
+            <div id="page_links">
+            	<%= link_to "About", about_path %>
+                <%= link_to "News", news_path %>
+                <%= link_to "Blog", blog_path %>
+                <%= link_to "Contact", contact_path %>
+                <%= link_to "Sitemap", sitemap_path %>
+    		</div>
                 
-    <div id="about" class="relative center">
-	<div id="top"></div>
-    <div id="mid">
-   		<img id="logo" src="<%= asset_path('logo.png') %>" class="lefted" width="107" height="53" />
-    	
-        <p class="lefted"><strong style="color: #5c7078;">About Comfe Designs</strong>: We are a design firm specializing in consumer electronics experience. Our creations focus on novel experiences that are highly functional, fashionable, and ergonomic.</p>
-
-        <p class="lefted">Everyday gadgets should feel as good as they look. Comfe Designs strives to make people smile&#8212;and keep them smiling&#8212;with every experience.</p>
-	</div>
+            <div id="location" class="absolute">
+            	<%= link_to "Located in Greenville, SC", "http://bit.ly/VRAM6g", :class => 'lefted', :target => '_blank' %>
+    		</div>           
                 
-	<div id="btm"></div>
+    		<img id="flag" class="absolute" src="<%= asset_path('flag.png') %>" width="49" height="36" />
+    	</div>
+                    
+        <div id="about" class="relative center">
+    	<div id="top"></div>
+        <div id="mid">
+       		<img id="logo" src="<%= asset_path('logo.png') %>" class="lefted" width="107" height="53" />
+        	
+            <p class="lefted"><strong style="color: #5c7078;">About Comfe Designs</strong>: We are a design firm specializing in consumer electronics experience. Our creations focus on novel experiences that are highly functional, fashionable, and ergonomic.</p>
+
+            <p class="lefted">Everyday gadgets should feel as good as they look. Comfe Designs strives to make people smile&#8212;and keep them smiling&#8212;with every experience.</p>
+    	</div>
+                    
+    	<div id="btm"></div>
+            
+    	<div id="credits" class="relative center">
+    		<p class="lefted">TM &amp; &copy; 2012 Comfe Designs LLC. All Rights Reserved. </p>
+    	            
+    		<span class="righted">
+    	    	<a href="legal.html">Terms of Use</a>
+    	        <a href="legal.html" style="margin-right: 0;">Privacy Policy</a>
+    	    </span>
+    	</div>
         
-	<div id="credits" class="relative center">
-		<p class="lefted">TM &amp; &copy; 2012 Comfe Designs LLC. All Rights Reserved. </p>
-	            
-		<span class="righted">
-	    	<a href="legal.html">Terms of Use</a>
-	        <a href="legal.html" style="margin-right: 0;">Privacy Policy</a>
-	    </span>
-	</div>
-    
-</div>
+    </div>
 
 </body>
+
 </html>
