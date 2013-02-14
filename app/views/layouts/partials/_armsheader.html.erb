@@ -6,15 +6,187 @@
 
     <div class="center relative" id="prod_identity">
         <img id="prod_logo" src="<%= asset_path('carms_logo.png') %>" width="360" height="58" class="absolute"/>
-        <h3 class="absolute" id="coming_soon">coming soon!</h3>   
+        <h4 id="price" class="absolute">from $49.95</h4>
+
+        <ul id="socials">
+            <p id="social_comment" class="absolute">"awesome product! I bought extra for my kids. -Kyle, San Antonio"</p>
+            <li style="background-position: -51px 0;"></li>
+            <li style="background-position: -102px 0;"></li>
+            <li style="background-position: -153px 0;"></li>
+            <li style="background-position: -204px 0;"></li>
+            <li style="background-position: -255px 0;"></li>
+            <li style="background-position: -308px 0;"></li>
+            <li style="background-position: -357px 0;"></li>
+            <li style="background-position: -403px 0;"></li>
+            <li style="margin-right: 0; background-position: -454px 0;"></li>
+        </ul>
+
     </div>
-      
+    
+
+
+
     <div class="center relative" id="prod_display">
         <img src="<%= asset_path 'comfe_arms_banner_v2_01.png' %>" width="199" height="331" class="absolute rollin" style="top: 110px; left:-50px;"/>
         <img src="<%= asset_path 'comfe_arms_banner_v2_03.png' %>" width="365" height="331" class="absolute rollin" style="top: 110px; left:200px"/>
         <img src="<%= asset_path 'comfe_arms_banner_v2_05.png' %>" width="173" height="331" class="absolute rollin" style="top: 110px; left:625px"/>
+
+        <span id="prod_selections" class="absolute">
+            <a id="iphone" class="selection" style="background-position: 0 0;" href="#"></a>
+            <a id="ipod" class="selection" style="background-position: 0 -195px;" href="#"></a>
+            <a id="nexus" class="selection" style="background-position: 0 -382px;" href="#"></a>
+        </span>  
+    
+        <div id="prod_config" class="absolute">
+            <h1 style="margin-bottom: 25px;">Fashion Yours</h1>
+
+            <div id="configuration">
+                <div id="select_helper" class="absolute">
+                    <img id="larrow" src="images/larrow_03.png" class="absolute" />
+                    <img id="rarrow" src="images/rarrow_03.png" class="absolute" />
+                    <p>pick a color</p>
+                </div>
+                
+                <div class="configs" id="band_color" style="margin-right: 50px;">
+                    <a href="#">Blue</a>
+                    <a href="#">Black</a>
+                </div>
+                <div class="configs" id="band_reflect" style="margin-right: 0;">
+                    <a href="#">Yellow</a>
+                    <a href="#">Green</a> 
+                </div>
+                <div class="configs" style="margin-right: 0; float: right;">
+                    <label for="config_qty">qty</label>
+                    <input name="config_qty" id="config_count" type="number" min="1" max="100" value="1" size="5" />
+                </div>
+            </div>
+
+            <div class="configs" id="final_creation" style="margin-right: 0;"></div>
+                
+            <div id="config_nav">
+                <a id="cancel_order" href="#">Cancel</a>
+                <a id="buy" href="#">Buy Now</a>
+                <a id="next" href="#">Add & Shop</a>
+            </div>
+                
+            <div id="form_instruction">
+                <p>Please enter your card info.</p>
+            </div>
+                
+            <form action="" method="POST" id="simplepayment-form" class="relative">
+              
+                <div id="card_details" class="form-section">
+                    <div class="form-row">
+                        <label>Card Number</label>
+                        <input type="text" size="20" autocomplete="off" class="card-number"/>
+                    </div>
+                    <div class="form-row">
+                        <label>CVC</label>
+                        <input type="text" size="2" autocomplete="off" class="card-cvc"/>
+                    </div>
+                    <div class="form-row">
+                        <label>Expiration (MM/YYYY)</label>
+                        <input type="text" size="1" class="card-expiry-month"/>
+                        <span> / </span>
+                        <input type="text" size="3" class="card-expiry-year"/>
+                    </div>
+                </div>
+                    
+                <div id="customer_details" class="form-section">
+                    <div class="names lefted">
+                        <div class="form-row">
+                            <label>First Name</label>
+                            <input type="text" size="" autocomplete="off"/>
+                        </div>
+
+                        <div class="form-row">
+                            <label>Last Name</label>
+                            <input type="text" size="" autocomplete="off" />
+                        </div>
+                    </div>
+                          
+                    <div class="address righted">                   
+                        <div class="form-row absolute" id="diff_ship">
+                            <input name="new_shipping" id="new_shipping" type="checkbox"  />
+                            <label for="new_shipping">use a different shipping address</label>
+                        </div>
+                            
+                        <div class="form-row">
+                            <label>Street Address</label>
+                            <input type="text" size="" class="addressinput"/>
+                        </div>
+
+                        <div class="form-row inlinerow">
+                            <label>City</label>
+                            <input type="text" size="10" class=""/>
+                        </div>
+                        
+                        <div class="form-row inlinerow">
+                            <label>State (LL)</label>
+                            <input type="text" size="2" class=""/>
+                        </div>
+        
+                        <div class="form-row inlinerow" style="margin-right: 0;">
+                            <label>Zip</label>
+                            <input type="text" size="9" class=""/>
+                        </div>
+                    </div>
+                   </div>
+                   
+                   <div id="altship" class="form-section">
+                        <div class="names lefted">
+                          <div class="form-row">
+                            <label>First Name</label>
+                            <input type="text" size="" autocomplete="off"/>
+                        </div>
+                        <div class="form-row">
+                            <label>Last Name</label>
+                            <input type="text" size="" autocomplete="off"/>
+                        </div>
+                    </div>
+                          
+                    <div class="address righted">
+                        <div class="form-row">
+                            <label>Street Address</label>
+                            <input type="text" size="" class="addressinput"/>
+                        </div>
+
+                        <div class="form-row inlinerow">
+                            <label>City</label>
+                            <input type="text" size="10" class=""/>
+                        </div>
+        
+                        <div class="form-row inlinerow">
+                            <label>State (LL)</label>
+                            <input type="text" size="2" class=""/>
+                        </div>
+
+                        <div class="form-row inlinerow">
+                            <label>Zip</label>
+                            <input type="text" size="9" class=""/>
+                        </div>
+
+                        <div class="form-row inlinerow" style="margin-right: 0;">
+                            <label>Country</label>
+                            <input type="text" size="4" class=""/>
+                        </div>
+                    </div>
+                </div>
+                   
+                <button name="shipping" class="absolute">Next</button>
+            </form>
+            
+        </div>
     </div>
 </div>
 
 
+ 
     
+    <div class="center relative" id="prod_display">
+            
+            
+           
+            
+        <!-- InstanceEndEditable -->
+        </div>
