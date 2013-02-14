@@ -1,12 +1,8 @@
 <% content_for :title, "About Comfe Designs" %>
-<% stylesheets 'informatic', 'about', :media => "all" %>
-<%= render :partial => 'layouts/partials/stdheader' %>
+<% stylesheets 'informatic', :media => "all" %>
+<%= render :partial => 'layouts/partials/aboutheader' %>
 
-
-
-<!--<h1>Comfe Life</h1>-->
-
-<div id="bigpicture" class="about">
+<div id="bigpicture">
     <img class="carousel" src="<%= asset_path('about_bkg_1.png') %>" width="1000" height="510" />
     <img class="carousel" src="<%= asset_path('about_bkg_2.png') %>" width="1000" height="510" />
     <img class="carousel" src="<%= asset_path('plane.png') %>" width="1004" height="510" />
@@ -40,7 +36,7 @@
 </div>
 
     
-<div class="informatic">
+<div class="informatic about">
     <div class="secondarytitle" id="design">
       <h2>Comfe Design</h2>
       <h3 class="about">Love. Travel. Make.</h3>
@@ -54,10 +50,10 @@
 </div>
     
     
-<div class="informatic">
+<div class="informatic about">
     <div class="secondarytitle" id="story">
       <h2>Comfe Story</h2>
-      <h class="about">The Beginning</h3>
+      <h3 class="about">The Beginning</h3>
         <span class="stacked">
             <p>2011: Comfe starts with a product idea for iPads and a cardboard model. People said, "Wow! This is really comfy!" And the name stuck. (We added "e" for electronics.) We were software geeks wanting to make accessories that we liked but couldn't get. The business model was born: develop high quality accessories for professionals.</p>
             <p>2012: Competing with pit bulls like Belkin and Logitech meant focusing on meeting the needs of the most demanding customers. We traveled to Hawaii and spent several months working with triathlon athletes to build Comfe Arms.</p>
