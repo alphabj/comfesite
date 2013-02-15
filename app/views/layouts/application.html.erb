@@ -12,14 +12,13 @@
 
 <%= javascript_include_tag "application" %>
 
-
 <!-- Don't forget to add Google Analytics -->
 
 <link href='http://fonts.googleapis.com/css?family=Arimo:700,700italic' rel='stylesheet' type='text/css' />
 </head>
 
 
-<body>
+<body id="<%= setBodyId(yield(:title)) %>">
 
     <div id="body" class="relative">
 
