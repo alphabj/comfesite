@@ -1,0 +1,214 @@
+/****
+
+Comfe Hands Scripts
+(c) 2012 Comfe Designs
+
+****/
+
+$(function(){
+
+	//gallery_link
+	$('#des.righted a').fancybox();
+	/*smooth scrolling*/
+	$('#detail_links a').smoothScroll({ offset: -100, speed: 1000 });
+
+
+
+
+	//fix asset paths
+	/*EMAIL FORM CONTROLS*/
+	$('form').mouseover(function(){
+		if (email_clicked == false ) {
+			$('.email').css({  
+				'background-image' : 'url(images/top_foot_block.png)',
+				'background-position' : '-303px 0',
+				'background-repeat' : 'no-repeat'
+			});
+			$('#submit').css ({ 
+				'background-image' : 'url(images/top_foot_block.png)',
+				'background-position' : '-992px 0',
+				'background-repeat' : 'no-repeat' 
+			});
+		}
+	}).mouseout(function(){
+		if (email_clicked == false ) {
+			$('.email').css({ 
+				'background-image' : 'url(images/top_foot_block.png)',
+				'background-position' : '0 0',
+				'background-repeat' : 'no-repeat'
+			});
+			$('#submit').css ({ 
+				'background-image' : 'url(images/top_foot_block.png)',
+				'background-position' : '-906 0',
+				'background-repeat' : 'no-repeat' 
+			});
+		}
+	});
+	
+	var email_clicked = false;
+	$('.email').click(function(){
+		if (email_clicked == false) {
+			email_clicked = true;
+			$(this).attr('value', "");
+		}		
+		$(this).css({ 
+			'color' : '#52a7cd',
+			'background-image' : 'url(images/top_foot_block.png)',
+			'background-position' : '-606px 0',
+			'background-repeat' : 'no-repeat'
+		});
+		$('#submit').css({
+			'background-image' : 'url(images/top_foot_block.png)',
+			'background-position' : '-1077px 0',
+			'background-repeat' : 'no-repeat' 
+		})
+		//do error checking on submit.
+	});
+	
+	var unClicked = true;
+	$('#submit').click(function(){
+		if (unClicked == true) {
+			unClicked = false;
+			if(	$('.email').val() == 'sign up for updates' || $('.email').val() == ' ' || $('.email').val() == ''){
+					$('form').attr('action', '');
+				}
+			$('form').fadeOut(300, function(){
+				$('#foot_links iframe').before('<h3 class="absolute">Thanks! TTY soon.</h3>').fadeIn(300);
+			});
+		}
+	});
+	/*END EMAIL FORM CONTROLS*/	
+	
+
+
+
+	
+	/* Switching main slideshow */
+	armsHeadline = new dotImageCycle();
+	// armsHeadline.startupSeq();
+	// armsHeadline.headlineStart();
+		
+	//set instance variables in click function below
+	$('.slideshow.hands li').click(function(){
+		var current = $(this).index();
+		if(armsHeadline.isOperating == false) {
+			armsHeadline.isOperating = true;
+			//clearTimeout(timer);
+			if(armsHeadline.intvlSet == true) { 
+				//clearInterval(autoChangeIntvl); 
+				armsHeadline.intvlSet = false; 
+			}
+			if( armsHeadline.previous != current ){	//ignore same clicks	
+				armsHeadline.changeDots(current);
+				armsHeadline.curtainCall(current);
+				armsHeadline.headlineSwitch(current);
+				armsHeadline.previous = current;
+			}
+			armsHeadline.isOperating = false;
+		}
+		// timer = setTimeout(autoChange, 4000);
+	});
+
+
+	/* Switching second slideshow */
+	//armsCustomers = new dotImageCycle();
+	// armsCustomers.startupSeq();
+	//change html structure of every id
+	//change slideshow id to slideshow class 
+	//set new class instance variables below
+	// $('.slideshow.second li').click(function(){
+	// 	var currentSlide = $(this).index();
+	// 	if(slideIsOperating == false) {
+	// 		slideIsOperating = true;
+	// 		//clearTimeout(slideTimer);
+	// 		if(slideIntvlSet == true) { 
+	// 			//clearInterval(slideChangeIntvl); 
+	// 			slideIntvlSet = false; 
+	// 		}
+	// 		if( previousSlide != currentSlide){	//ignore same clicks	
+	// 			slideShowDots(currentSlide);
+	// 			slideShowCall(currentSlide);
+	// 			previousSlide = currentSlide;
+	// 		}
+	// 		slideIsOperating = false;
+	// 	}
+	// 	//slideTimer = setTimeout(setSlideInvl, 4000);
+	// });
+
+
+
+
+	/* Add email addresses */
+	var address = 'mailto:'; 
+	address += 'info';
+	address	+= '@';
+	address += 'comfedesigns';
+	address += '.com';
+	$('#chat a').click(function(){
+		$(this).attr('href', address);
+	});
+	
+
+
+
+
+	/* Video btn clicks */
+	videoClicked = false;
+	$('#videoBtn').mouseover(function(){
+		if (videoClicked == false) { 
+			$(this).css({
+				'background-image' : 'url("images/video_btns.png")',
+				'background-position' : '-142px 0',
+				'background-repeat' : 'no-repeat'
+			}); 
+		}
+	}).mouseout(function(){
+		if (videoClicked == false) { 
+			$(this).css({
+				'background-image' : 'url("images/video_btns.png")',
+				'background-position' : '0 0',
+				'background-repeat' : 'no-repeat'	
+			}); 
+		}
+	}).click(function(){
+		if (videoClicked == false) {
+			videoClicked = true;
+			$(this).css({
+				'background' : '#000000',
+				'opacity' : '1'
+			}).animate({
+				'border-radius' : '12px',
+				'width' : '100%',
+				'height' : '100%',
+				'bottom' : '0',
+				'right' : '0'
+			}, 600, function(){ 
+				$('#helloWorld iframe').fadeIn(400); 
+				$('#videoClose').fadeIn(200);
+			}).removeClass('clickable');
+		}
+	});
+	
+	$('#videoClose').click(function(){
+		videoClicked = false;
+		$('#helloWorld iframe').fadeOut(400);
+		$(this).fadeOut(200, function(){
+			$('#videoBtn').animate({
+				'width' : '141px',
+				'height' : '87px',
+				'bottom' : '12px',
+				'right' : '12px',
+				'opacity' : '0'
+			}, 600, function(){
+				$(this).css({ 
+					'opacity' : '1',
+					'background-image' : 'url("images/video_btns.png")',
+					'background-position' : '0 0',
+					'background-repeat' : 'no-repeat',
+					'backgroundColor' : 'transparent'
+				});
+			})
+		});
+	});
+	
+});

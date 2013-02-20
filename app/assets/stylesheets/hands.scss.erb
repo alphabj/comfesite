@@ -54,8 +54,10 @@ h3#order_msg{top:65px;left:690px;width:230px;color:#F00;font-size:.8em}
 
 #videoBtn{background-image:url(<%= asset_path 'video_btns.png' %>);background-position:0 0;background-repeat:no-repeat;width:141px;height:87px;bottom:12px;right:12px;cursor:pointer}
 
-#message {
-	margin-top:25px;background:url(<%= asset_path 'gradient_btm_2.png' %>) top center no-repeat;min-height:140px;
+.headline {
+	margin-top:25px;
+	background:url(<%= asset_path 'gradient_btm_2.png' %>) top center no-repeat;
+	min-height:140px;
 
 	ul{
 		padding-top:17px;margin:0 auto;width:93px;
@@ -107,17 +109,19 @@ img#zen{left:58px}
 img#nurse{left:70px}
 
 #every.lefted {
-	img { display:none;top:0; }
-	img#skyscraper { top:57px;left:25px; }
+	img { display:block;top:0; }
+	/* img#skyscraper { top:57px;left:25px; } */
 	#bartop { width:85%;border-top:#CCC 1px solid;top:360px;left:36px; }
 }
 
-#every ul#slideshow {
+/*
+#every ul.slideshow {
 	margin:10px auto 0 auto;width:63px;
 	li{float:left;display:block;list-style-type:none;cursor:pointer;width:10px;height:10px;background-image:url(<%= asset_path 'dot_block.png' %>);background-position:0 0;background-repeat:no-repeat;margin-right:11px}
 	li:hover{background-image:url(<%= asset_path 'dot_block.png' %>);background-position:-13px 0;background-repeat:no-repeat}
 	li.selected{background-image:url(<%= asset_path 'dot_block.png' %>);background-position:-27px 0;background-repeat:no-repeat}
 }
+*/
 
 #footer { background:url(<%= asset_path 'foot_bdr_top.png' %>) top left repeat-x;min-height:170px;color:#859da7; }
 
