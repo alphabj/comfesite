@@ -9,7 +9,7 @@ div#prod_connections {  }
 */
 
 #prod_identity { 
-	height: 80px;
+	height: 55px;
 }
 
 #product_details_links {
@@ -47,31 +47,60 @@ div#prod_connections {  }
 		}
 
 		div.icons { 
-
-			height: 70px !important; 
-			border: 1px solid #777777;
+			height: 90px !important; 
 			margin-bottom: 0;
-			background: none;
+			background: url(<%= asset_path 'main_div_border.png' %>) bottom left no-repeat;
+			padding: 20px 25px 25px 50px;
 
+			h3, p { clear: none; margin-left: 200px;} 
 			h3{
-				margin: 20px 20px 10px 200px;
 				font-size: 1.5em;
 				font-weight: bold;
 				color: #555555;
 			}
 			p { 
-				margin-left: 200px;
-				margin-right: 20px;
 				font-size: 1em;
 				color: #767676;
 				line-height: 1.2em;		
 			}
-		}
+			span.icon { 
+				background-image:url(<%= asset_path 'featureicons.png' %>);
+				background-repeat: no-repeat;
+				width: 90px;
+				height: 90px;
+				float: left;
+				display: block;
+			}
+			#comfort{ background-position: -3px 0; }
+			#touchthrough{ background-position: -3px -113px; }
+			#novelcro{ background-position: -6px -226px; }
+			#moisture { background-position: -3px -339px; }
+			#silver{ background-position: -3px -452px; }
+			#layered{ background-position: -3px -565px; }
+			#durable{ background-position: -3px -678px; }
+			#safety{ background-position: -3px -791px; }
+		}div.closingicon { background: none;}
 	}
 
 	.closingdiv { margin-bottom: 0;}
+	.closinglinks { 
+		height: 50px;
+		background: none;
+		margin-top: 20px;
+		a { 
+			display: block;
+			width: 100%;
+			text-align: center;
+		}
+		a:hover { font-style: italic;}
+	}
 
 }
 
-#armsfeatures { div{ min-height: auto; padding-bottom: 50px; } }
+#armsfeatures { 
+	div { 
+		min-height: auto; 
+		padding-bottom: 50px; 
+	} 
+}
 
