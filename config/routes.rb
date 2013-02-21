@@ -6,8 +6,7 @@ Comfesite::Application.routes.draw do
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action
 
-  match 'arms' => 'pages#arms'
-  match 'hands' => 'pages#hands'
+  #front-facing pages
   match 'about' => 'pages#about'
   match 'news' => 'pages#news'
   match 'blog' => 'pages#blog'
@@ -15,6 +14,19 @@ Comfesite::Application.routes.draw do
   match 'sitemap' => 'pages#sitemap'
   match 'legal' => 'pages#legal'
   match 'faq' => 'pages#faq'
+
+  #product pages
+  match 'hands' => 'pages#hands'
+
+  #Comfe Arms pages
+  match 'arms' => 'pages#arms'
+  match 'armsdesign' => 'pages#armsdesign'
+  match 'armsfeats' => 'pages#armsfeats'
+  match 'armsspecs' => 'pages#armsspecs'
+  
+  #cart and customer content pages
+  match 'order' => 'pages#order'
+
 
   # Sample of named route:
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase

@@ -1,0 +1,19 @@
+<% content_for :head, (render :partial => 'layouts/partials/basiclayoutsheets') %>
+<%= render :partial => 'layouts/partials/productlayoutsheets' %>
+
+<div id="header" class="relative">
+    
+    <%= render :partial => 'layouts/partials/topbar' %>
+
+    <div class="center relative" id="prod_identity">
+        <img id="prod_logo" src="<%= asset_path('carms_logo.png') %>" width="360" height="58" class="absolute"/>
+    </div>
+
+    <div id="product_details_links" >
+    	<%= link_to "features", armsfeats_path %>
+    	<%= link_to "design", armsdesign_path, :class => 'selected' %>
+    	<%= link_to "specs", armsspecs_path %>
+    	<%= link_to "buy", order_path %> 
+    </div>
+
+</div> 
