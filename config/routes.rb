@@ -9,7 +9,6 @@ Comfesite::Application.routes.draw do
   #front-facing pages
   match 'about' => 'pages#about'
   match 'news' => 'pages#news'
-  match 'blog' => 'pages#blog'
   match 'contact' => 'pages#contact'
   match 'sitemap' => 'pages#sitemap'
   match 'legal' => 'pages#legal'
