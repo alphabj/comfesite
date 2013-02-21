@@ -14,7 +14,7 @@ div#prod_connections {  }
 
 #product_details_links {
 	width: 950px;
-	margin: 0 auto 100px auto;
+	margin: 0 auto 70px auto;
 	padding-bottom: 10px;
 	background: url(<%= asset_path 'main_div_border.png' %>) bottom center no-repeat;
 	a { 
@@ -23,10 +23,11 @@ div#prod_connections {  }
 		font-weight: 200;
 		font-style: normal;
 		color: #999999;
-	} a.selected { color: #555555;}
+	} a:hover, a.selected { color: #555555; }
+
 }
 
-#armsdesign {
+#armsdesign, #armsfeatures {
 	width: 950px;
 	margin: 0 auto;
 		
@@ -41,9 +42,36 @@ div#prod_connections {  }
 		}
 		h2 {
 			font-size: 1.8em;
-			color: #61b6da;		
+			color: #61b6da;
+			margin-bottom: 30px;		
+		}
+
+		div.icons { 
+
+			height: 70px !important; 
+			border: 1px solid #777777;
+			margin-bottom: 0;
+			background: none;
+
+			h3{
+				margin: 20px 20px 10px 200px;
+				font-size: 1.5em;
+				font-weight: bold;
+				color: #555555;
+			}
+			p { 
+				margin-left: 200px;
+				margin-right: 20px;
+				font-size: 1em;
+				color: #767676;
+				line-height: 1.2em;		
+			}
 		}
 	}
 
 	.closingdiv { margin-bottom: 0;}
+
 }
+
+#armsfeatures { div{ min-height: auto; padding-bottom: 50px; } }
+
