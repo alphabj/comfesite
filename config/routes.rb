@@ -24,7 +24,7 @@ Comfesite::Application.routes.draw do
   match 'armsspecs' => 'pages#armsspecs'
   
   #cart and customer content pages
-  match 'order' => 'pages#order'
+  match 'armsbuy' => 'pages#armsbuy'
 
 
   # Sample of named route:
