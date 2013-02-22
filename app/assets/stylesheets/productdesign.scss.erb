@@ -20,12 +20,12 @@ $h2color: #2E2E2E;
 	} a:hover, a.selected { color: #555555; }
 }
 
-#armsdesign, #armsfeatures {
+#armsdesign, #armsfeatures, #armsspecs {
 	width: 950px;
 	margin: 40px auto 70px auto;
 	
 	div {
-		height: 650px;
+		min-height: 650px;
 		background: url(<%= asset_path 'main_div_border.png' %>) bottom center no-repeat;
 		margin-bottom:70px;
 
@@ -58,7 +58,7 @@ $h2color: #2E2E2E;
 			}
 		}
 		div.icons { 
-			height: 90px !important; 
+			min-height: 90px !important; 
 			margin-bottom: 0;
 			background: url(<%= asset_path 'main_div_border.png' %>) bottom left no-repeat;
 			padding: 20px 25px 25px 50px;
@@ -95,6 +95,7 @@ $h2color: #2E2E2E;
 
 	.closingdiv { margin-bottom: 0;}
 	.closinglinks { 
+		min-height: 50px;
 		height: 50px;
 		background: none;
 		margin-top: 20px;
@@ -120,6 +121,7 @@ $h2color: #2E2E2E;
 }
 #armsfeatures { 
 	div { 
+		min-height: auto;
 		height: auto; 
 		padding-bottom: 50px; 
 	} 
@@ -131,9 +133,16 @@ $h2color: #2E2E2E;
 	div {
 		.tinyfeats { 
 			height: 25px;
-			a { display: block; margin-left: 55px; padding-top: 25px; }
+			a { 
+				display: block; 
+				margin-left: 55px; 
+				padding-top: 25px; 
+				height: 35px;
+				background-image: url(<%= asset_path 'tinyfeats.png' %>);
+				background-position: 490px 18px;
+				background-repeat: no-repeat;
+			}
 			a:hover { font-style: italic; }
-			img { position: absolute; top: 17px; right: 40px; }
 		}
 	}
 }
@@ -141,4 +150,8 @@ $h2color: #2E2E2E;
 	margin-top: 0px; 
 	div { margin-bottom: 20px; }
 	.closinglinks { height: 50px; margin-top: 0px; }
+}
+
+#armsspecs {
+
 }
