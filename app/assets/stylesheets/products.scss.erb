@@ -4,31 +4,66 @@
 #topBar { background: url(<%= asset_path 'top_bar_prod.png' %>) top left repeat-x; }
 
 #prod_identity { 
-	width: 950px; z-index: 1;  margin-top: 40px; margin-bottom: 20px; oveflow: auto;
+	width: 950px; 
+	z-index: 1;  
+	margin-top: 40px; 
+	margin-bottom: 20px; 
+	oveflow: auto;
 	
-	h4#price { 
-		right: -55px; 
-		top: 136px;
-		font-size: 1.2em; 
+	img#prod_logo { top: 0; right: 0;}
+	h4.price { 
+		right: 0px; 
+		top: 60px;
+		font-size: 1em; 
 		font-weight: 100; 
 		font-family:Arial, Helvetica, sans-serif; 
 		color: #676767; 
-	}
-
+	}	
 }
 
-img#prod_logo { top: 0; right: 0;}
-/* img#prod_logo { margin-left: 645px; margin-top: 40px; } */
+/* BEGIN FACEBOOK */
+p#social_comment { 
+	top: 120px; left: 5px; 
+	font-weight: 100;
+	font-family:Arial, Helvetica, sans-serif;
+	color: #434343;
+}
+ul#socials {
+	width: 600px;
+	height: 40px;
+	display: none;
 
-#coming_soon { top: 60px; right: 0; color: #2E2E2E; }
+	li {
+		width: 28px;
+		height: 28px;
+		list-style-type: none;
+		display: inline-block;
+		cursor: pointer;
+		margin-right: 7px;
+		background-image: url(<%= asset_path 'profile_pics.png' %>);
+		background-repeat: no-repeat;
+	} 
+	li:hover { background-image: url(<%= asset_path 'profile_pics_hov.png' %>); background-repeat: no-repeat; }
+}
+/* END FACEBOOK */
 
 
-#prod_display { min-height: 470px; } /* #prod_display { min-height: 520px; } */
+#prod_display { 
+	min-height: 530px;
+	background: url(<%= asset_path 'gradient_btm_small.jpg' %>) bottom center no-repeat;
+	.rollin { opacity: 1; top: 55px; }
+}
 
-img#prod_bkg_img { display: block; margin: 0 auto; padding-top: 120px; z-index: 0; }
+#body h1 { 
+	text-align: center;
+	font-size: 2.5em;
+	color: #2E2E2E;
+	margin-bottom:40px;
+}
 
-#body h1 { text-align: center; font-size: 2.5em; color: #2E2E2E; margin-top: 10px; margin-bottom:40px; }
 
+
+/*BEGIN PRODUCT SELETION AND CONFIGURATION*/
 
 #prod_selections { width: 176px; z-index: 2; top: 40px; }
 
@@ -68,71 +103,8 @@ div#prod_sections {
 	}
 }
 
-/* BEGIN FACEBOOK */
 
-#social_comments { }
-p#social_comment { 
-	top: 120px; left: 5px; 
-	font-weight: 100;
-	font-family:Arial, Helvetica, sans-serif;
-	color: #434343;
-}
-
-ul#socials {
-	margin-top: 25px;
-	width: 600px;
-	height: 40px;
-	display: none;
-
-	li {
-		width: 28px;
-		height: 28px;
-		list-style-type: none;
-		display: inline-block;
-		cursor: pointer;
-		margin-right: 7px;
-		background-image: url(<%= asset_path 'profile_pics.png' %>);
-		background-repeat: no-repeat;
-	} 
-	li:hover { background-image: url(<%= asset_path 'profile_pics_hov.png' %>); background-repeat: no-repeat; }
-}
-/* END FACEBOOK */
-
-
-div#showcase { 
-	width: 950px; margin: 0 auto 100px auto; overflow: auto; 
-
-	span {
-		display: block;
-		width: 100%;
-		min-height: 300px;
-		position: relative;
-		background: url(<%= asset_path 'section_top_grad.png' %>) top center no-repeat;
-
-		h1 {
-			padding: 40px 0 0 0;
-			font-size: 1.8em;
-			font-family: Arial, Helvetica, sans-serif;
-			font-weight: 600;
-			color: #079fdf;
-			text-align: center;
-		}
-
-		span.showcase_detail { 
-			position: absolute; background: none; min-height: 100px; 
-			
-			h3 { font-size: 1.6em; }
-			p { margin-top: 15px; font-size: 1em; }
-		}
-	}
-
-	#concept { 
-		 h1 { text-align: left; padding-top: 30px; width: 41%; }
-		 p { padding-bottom: 30px; color:#4C0927; line-height: 1.5em; width: 41%; }
-	}
-
-}
-
+iframe#catcher { display: none; }
 
 div.configs {
 	display: inline-block; margin-bottom: 20px;
@@ -147,8 +119,6 @@ div.configs {
 	}
 
 }
-
-
 #band_color, #band_reflect {  }
 #band_color {  }
 #band_reflect { }
@@ -229,9 +199,6 @@ span#storemap { background: url(<%= asset_path 'store_map.png' %>) top left no-r
 span#ordernow { background: url(<%= asset_path 'serving_platter.png' %>) top center no-repeat #efefe8; }
 
 
-
-.rollin { opacity: 0; }
-
 form{ margin: 0 auto; width: 371px; margin-bottom: 25px; overflow: auto; opacity: .5; filter: alpha(opacity = 50); }
 input { float: left; height: 44px; }
 input.email {
@@ -252,15 +219,3 @@ input#submit {
 	background-repeat: no-repeat;
 	width:			78px;
 }
-
-iframe#catcher { display: none; }
-
-#body h1 { 
-	text-align: center;
-	font-size: 2.5em;
-	color: #2E2E2E;
-	margin-top: 10px;
-	margin-bottom:40px;
-}
-
-

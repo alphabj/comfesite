@@ -6,29 +6,26 @@
 
     <div class="center relative" id="prod_identity">
         <img id="prod_logo" src="<%= asset_path('carms_logo.png') %>" width="360" height="58" class="absolute"/>
-        <h4 id="price" class="absolute">from $49.95</h4>
-
-        <ul id="socials">
-            <p id="social_comment" class="absolute">"awesome product! I bought extra for my kids. -Kyle, San Antonio"</p>
-            <li style="background-position: -51px 0;"></li>
-            <li style="background-position: -102px 0;"></li>
-            <li style="background-position: -153px 0;"></li>
-            <li style="background-position: -204px 0;"></li>
-            <li style="background-position: -255px 0;"></li>
-            <li style="background-position: -308px 0;"></li>
-            <li style="background-position: -357px 0;"></li>
-            <li style="background-position: -403px 0;"></li>
-            <li style="margin-right: 0; background-position: -454px 0;"></li>
-        </ul>
-
+        <h4 class="price absolute">coming soon</h4>
     </div>
     
-    <div class="center relative" id="prod_display">
-        <img src="<%= asset_path 'comfe_arms_banner_v2_01.png' %>" width="199" height="331" class="absolute rollin" style="top: 110px; left:-50px;"/>
-        <img src="<%= asset_path 'comfe_arms_banner_v2_03.png' %>" width="365" height="331" class="absolute rollin" style="top: 110px; left:200px"/>
-        <img src="<%= asset_path 'comfe_arms_banner_v2_05.png' %>" width="173" height="331" class="absolute rollin" style="top: 110px; left:625px"/>
+    <%= render :partial => 'layouts/partials/armstoplinks' %>
 
-        <span id="prod_selections" class="absolute">
+    <!-- <ul id="socials" class="relative">
+        <p id="social_comment" class="absolute">"awesome product! I bought extra for my kids. -Kyle, San Antonio"</p>
+        <li style="background-position: -51px 0;"></li>
+        <li style="background-position: -102px 0;"></li>
+        <li style="background-position: -153px 0;"></li>
+        <li style="background-position: -204px 0;"></li>
+        <li style="margin-right: 0; background-position: -454px 0;"></li>
+    </ul> -->
+
+    <div class="center relative" id="prod_display">
+        <img src="<%= asset_path 'comfe_arms_banner_v2_01.png' %>" width="199" height="331" class="absolute rollin" style="left:-50px;"/>
+        <img src="<%= asset_path 'comfe_arms_banner_v2_03.png' %>" width="365" height="331" class="absolute rollin" style="left:200px"/>
+        <img src="<%= asset_path 'comfe_arms_banner_v2_05.png' %>" width="173" height="331" class="absolute rollin" style="left:625px"/>
+
+        <!-- <span id="prod_selections" class="absolute">
             <a id="iphone" class="selection" style="background-position: 0 0;" href="#"></a>
             <a id="ipod" class="selection" style="background-position: 0 -195px;" href="#"></a>
             <a id="nexus" class="selection" style="background-position: 0 -382px;" href="#"></a>
@@ -173,6 +170,6 @@
                 <button name="shipping" class="absolute">Next</button>
             </form>
             
-        </div>
+        </div> -->
     </div>
 </div> 
