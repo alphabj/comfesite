@@ -30,11 +30,14 @@ div#prod_connections {  }
 #armsdesign, #armsfeatures {
 	width: 950px;
 	margin: 0 auto;
-		
+	
 	div {
-		min-height: 650px;
+		height: 650px;
 		background: url(<%= asset_path 'main_div_border.png' %>) bottom center no-repeat;
 		margin-bottom:70px;
+
+		h1, h2, span, div { position: relative; z-index: 1; }
+
 		h1 {
 			text-align: left;
 			font-size: 2.8em;
@@ -45,14 +48,28 @@ div#prod_connections {  }
 			color: #61b6da;
 			margin-bottom: 30px;		
 		}
+		span.aside {
+			display: block;
+			position: absolute;
 
+			h3 {
+				font-size: 1.5em;
+				color: #555555;
+				margin-bottom: 5px;
+			}
+			p {
+				font-size: 1em;
+				color: #333333;
+				line-height: 1.2em;
+			}
+		}
 		div.icons { 
 			height: 90px !important; 
 			margin-bottom: 0;
 			background: url(<%= asset_path 'main_div_border.png' %>) bottom left no-repeat;
 			padding: 20px 25px 25px 50px;
 
-			h3, p { clear: none; margin-left: 200px;} 
+			h3, p { clear: none; margin-left: 150px;} 
 			h3{
 				font-size: 1.5em;
 				font-weight: bold;
@@ -97,9 +114,19 @@ div#prod_connections {  }
 
 }
 
+#armsdesign { 
+	div { 
+		img { 
+			z-index: 0; 
+			position: absolute; 
+			top: 0; 
+			left: 0;
+		} 
+	} 
+}
 #armsfeatures { 
 	div { 
-		min-height: auto; 
+		height: auto; 
 		padding-bottom: 50px; 
 	} 
 }
