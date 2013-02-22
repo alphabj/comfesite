@@ -1,6 +1,8 @@
 @charset "UTF-8";
 /* Product Pages */
 
+$h1color: #2E2E2E;
+
 #topBar { background: url(<%= asset_path 'top_bar_prod.png' %>) top left repeat-x; }
 
 #prod_identity { 
@@ -49,18 +51,20 @@ ul#socials {
 
 
 #prod_display { 
-	min-height: 530px;
+	min-height: 610px;
 	background: url(<%= asset_path 'gradient_btm_small.jpg' %>) bottom center no-repeat;
 	.rollin { opacity: 1; top: 55px; }
-}
 
-#body h1 { 
-	text-align: center;
-	font-size: 2.5em;
-	color: #2E2E2E;
-	margin-bottom:40px;
+	h1 { 
+		text-align: center;
+		font-size: 2.5em;
+		color: $h1color;
+		margin-bottom:80px;
+		position: absolute;
+		bottom: 40px;
+		width: 100%;
+	}
 }
-
 
 
 /*BEGIN PRODUCT SELETION AND CONFIGURATION*/

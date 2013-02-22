@@ -3,34 +3,24 @@
 <%= render :partial => 'layouts/partials/armsheader' %>
 <%= stylesheet_link_tag "productdesign", :media => "all" %>
 
-<h1>For <em>people</em> with gadgets who get out.</h1>
-<iframe name="catcher" height="0"></iframe >
-<form action="https://docs.google.com/a/improvz.com/spreadsheet/formResponse?pli=1&amp;hl=en_US&amp;formkey=dC14SllXS1NjQWtMbGdGU2VzM2dSSlE6MQ&amp;ifq" method="POST" target="catcher" >
-    <input name="entry.0.single" value="sign up for updates" type="text" class="email" />
-    <input name="submit" type="submit" value="" id="submit" />
-</form>
-
-<div id="armsdesign" class="relative">
-
+<div id="armsdesign" class="relative frontpage">
 	<div class="relative">
-		
-		<h1>An intuitive experience</h1>
-		<h2>An armband made for people rather than for a phone.</h2>
-		<img src="http://2.bp.blogspot.com/-RY9nD7ckJ3s/TV6slYB5API/AAAAAAAAAKU/82Waf1VW_IY/s1600/SuperCars+%255B9hd.blogspot.com%255D+%252813%2529.jpg" width="800" height"595">
+		<h1>Designed for life. Made for comfort.</h1>
+		<h2>Natural motion—that's smart.</h2>
+		<img src="<%= asset_path 'frontpage_design.png' %>" style="top:150px; left:0;"/>
 	</div>
-			<%= link_to "see design", armsdesign_path %>
-
+	<div class="closinglinks"> <%= link_to "see design", armsdesign_path %> </div>
 </div>
 
 
-<div id="armsfeatures" class="relative">
+<div id="armsfeatures" class="relative frontpage">
 
 	<div class="relative closingdiv">
-		<h1>Comfortable is smart.</h1>
-		<h2>Hi-tec fabrics keep you dry, fresh, and clean.</h2>
-		
-		<!-- insert image here -->
-		
+		<h1>Feeling is believing.</h1>
+		<h2>Soft, hi-tech fabrics keep you dry, fresh, and clean.</h2>
+			
+		<img src="<%= asset_path 'feely_fabric.png' %>" style="margin-bottom: 20px;"/>
+
 		<div class="icons">
 			<span class="icon" id="moisture"></span>
 			<h3>Hi-tech silver fabric kills stink.</h3>
@@ -48,7 +38,7 @@
 		</div>
 		<div class="tinyfeats">
 			<%= link_to "all features", armsfeats_path %>
-			<!-- insert image for tiny features -->
+			<img src="<%= asset_path 'tinyfeats.png' %>" />
 		</div>
 		
 	</div>
@@ -58,3 +48,5 @@
 	</div>
 
 </div>
+
+<iframe name="catcher" height="0"></iframe >
