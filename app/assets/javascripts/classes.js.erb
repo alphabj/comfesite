@@ -1,0 +1,44 @@
+/* CLASS AND METHODS FOR IMAGE CHANGING DOTS */
+
+//class for sitewide use of image-changing dots
+function dotImageCycle() {
+	this.isOperating = false;
+	this.previous;
+	this.intvlSet = false;
+	//this.timer = setTimeout(dotImageCycle.autoChange(), 4000); 
+}
+dotImageCycle.prototype.startupSeq = function(firstImg, firstListItem) {
+	firstImg.addClass('nowShowing').fadeIn(500); //pass in the first image and list item to this function
+	firstListItem.addClass('selected');
+}
+dotImageCycle.prototype.curtainCall = function(lastOne, nextOne) {
+	lastOne.removeClass('nowShowing').fadeOut(400, function() { nextOne.addClass('nowShowing').fadeIn(400);	});
+}
+dotImageCycle.prototype.changeDots = function(before, after) {
+	before.removeClass('selected');
+	after.addClass('selected');
+}
+// dotImageCycle.prototype.autoChange = function() {
+// 	dotImageCycle.intvlSet = true;
+// 	interval = setInterval(function(){
+// 		if ( $('.slideshow li:last').hasClass('selected') ){ 
+// 			changeDots(0);
+// 			curtainCall(0);
+// 		} else {
+// 			var nextOne = $('.slideshow li.selected').index() + 1;
+// 			changeDots(nextOne);//find the position and do the next item in the list
+// 			curtainCall(nextOne);
+// 		}
+// 	}, 9000);
+// }
+
+// dotImageCycle.prototype.headlineStart = function(item) { item.addClass('nowShowing').fadeIn(500); }
+// dotImageCycle.prototype.headlineSwitch = function(lastOne, nextOne) {
+// 	lastOne.removeClass('nowShowing').fadeOut(400, function(){ nextOne.addClass('nowShowing').fadeIn(400); });
+// }
+
+/* END CLASS AND METHODS FOR IMAGE CHANGING DOTS */
+
+
+
+

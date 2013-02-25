@@ -4,7 +4,8 @@ $(function(){
 
 	//set a new instance of dotImageCycle class and start it up 	
 	homepageDots = new dotImageCycle();
-	homepageDots.startupSeq();
+	homepageDots.startupSeq($('img.carousel :first'), $('.slideshow li:first'));
+	//homepageDots.headlineStart($('.headine h1:first'));
 
 	$('ul.slideshow.home li').click(function(){
 		var current = $(this).index();
@@ -12,13 +13,13 @@ $(function(){
 			homepageDots.isOperating = true;
 			//clearTimeout(homepageDots.timer);
 			if(homepageDots.intvlSet == true) { 
-				//clearInterval(homepageDots.autoChange()); 
+				//clearInterval(homepageDots.autoChange.timer); 
 				//homepageDots.intvlSet = false; 
 			}
 			if( homepageDots.previous != current ){	//ignore same clicks	
-				homepageDots.changeDots(current);
-				homepageDots.curtainCall(current);
-				//headline(current);
+				homepageDots.changeDots($('.slideshow li.selected'), $('.slideshow li').eq(current));
+				homepageDots.curtainCall($('img.nowShowing'), $('img.carousel').eq(current));
+				//headlineSwitch($('.headline h1.nowShowing'), $('.headline h1').eq(position) );
 				homepageDots.previous = current;
 			}
 			homepageDots.isOperating = false;
