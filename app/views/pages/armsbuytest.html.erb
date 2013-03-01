@@ -2,7 +2,6 @@
 <% stylesheets 'products', :media => "all" %>
 <%= render :partial => 'layouts/partials/productdetailsheader' %>
 
-
 <%= javascript_include_tag "https://js.stripe.com/v1/" %>
 
 
@@ -13,17 +12,19 @@
 
     }
 
+    span.payment-errors { color: #A80F21; }
 
 </style>
 
 <div class="center relative" style="min-height: 550px; height: 550px; margin-bottom: 30px;">
 
     <h1>Charge $10 with Stripe Exercise</h1>
-        
-    <span class="payment-errors"></span>
 
+    <span class="payment-errors">
+        <noscript>JavaScript is not enabled on your browser. First enable JavaScript in your browser settings menu.</noscript>
+    </span>
 
-    <form action="" method="POST" id="payment-form">
+    <form action="pmttest/:charge" method="POST" id="payment-form" >
       <div class="form-row">
         <label>
           <span>Card Number</span>
