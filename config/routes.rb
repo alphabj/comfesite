@@ -14,7 +14,7 @@ Comfesite::Application.routes.draw do
   match 'legal' => 'pages#legal'
   match 'faq' => 'pages#faq'
 
-  #product pages
+  #Comfe Hands pages
   match 'hands' => 'pages#hands'
 
   #Comfe Arms pages

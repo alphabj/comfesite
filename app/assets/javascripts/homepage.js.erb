@@ -7,7 +7,7 @@ $(function(){
 	homepageDots.startupSeq($('img.carousel :first'), $('.slideshow li:first'));
 	//homepageDots.headlineStart($('.headine h1:first'));
 
-	$('ul.slideshow.home li').click(function(){
+	$('ul.slideshow li').click(function(){  //add .home class for just homepage. 
 		var current = $(this).index();
 		if(homepageDots.isOperating == false) {
 			homepageDots.isOperating = true;

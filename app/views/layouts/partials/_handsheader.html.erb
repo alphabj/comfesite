@@ -1,12 +1,7 @@
 <% content_for :title, "Comfe Hands" %>
 <% content_for :head, (render :partial => 'layouts/partials/handslayoutsheets') %>
 
-<div id="header" class="relative">        
-    <div id="topBar">
-        <ul class="center">
-            <li id="tweet"><a href="https://twitter.com/share" class="twitter-share-button" data-count="horizontal"></a></li>
-            <li><iframe id="fb_like" src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.comfehands.com%2F&amp;send=false&amp;layout=standard&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font=arial&amp;height=35" scrolling="no" frameborder="0" allowTransparency="true"></iframe></li>
-        </ul>
-    </div>
-    <div id="productName" class="center"><img id="hands_logo" src="<%= asset_path 'hands_logo.png' %>" width="406" height="83"/></div>
+
+<div id="header" class="relative">
+    <%= render :partial => 'layouts/partials/topbar' %>
 </div>
