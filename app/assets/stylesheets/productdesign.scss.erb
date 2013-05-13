@@ -25,26 +25,16 @@ $h2color: #2E2E2E;
 
 #armsdesign, #armsfeatures, #armsspecs, #sizinguide {
 	width: 950px;
-	margin: 40px auto 70px auto;
+	margin: 40px auto 0 auto;
 	
 	div {
 		min-height: 600px;
 		background: url(<%= asset_path 'main_div_border.png' %>) bottom center no-repeat;
-		margin-bottom:70px;
 
 		h1, h2, span, div { position: relative; z-index: 1; }
 
-		h1 {
-			text-align: left;
-			font-size: 2.5em;
-			margin-bottom: 5px;
-			color: $h1color;
-		}
-		h2 {
-			font-size: 1.8em;
-			color: $h2color;
-			margin-bottom: 30px;		
-		}
+		h1 { font-size: 2.5em; margin-bottom: 5px; color: $h1color; }
+		h2 { font-size: 1.8em; color: $h2color; margin-bottom: 30px; }
 		span.aside {
 			display: block;
 			position: absolute;
@@ -118,7 +108,8 @@ $h2color: #2E2E2E;
 		img { 
 			z-index: 0; 
 			position: absolute;  
-			left: 0;
+			top:150px; 
+			left:60px;
 		} 
 	} 
 }
@@ -126,12 +117,11 @@ $h2color: #2E2E2E;
 	div { 
 		h1 { text-align: center; }
 		min-height: auto;
-		height: auto; 
+		height: auto;
 		padding-bottom: 50px; 
 	} 
 }
 
-#armsfeatures.frontpage, #armsdesign.frontpage { margin-bottom: 30px; }
 #armsfeatures.frontpage { 
 	margin-top: 50px; 
 	div {
@@ -151,27 +141,20 @@ $h2color: #2E2E2E;
 		}
 	}
 }
+
 #armsdesign.frontpage {
 	margin-top: 0px; 
 	div { margin-bottom: 20px; }
-	.closinglinks { height: 50px; margin-top: 0px; }
 }
 
 #sizinguide {
-	div { 
-		div.icons {
-			span.icon { background: none; } 
-		} 
+	div {  
 
 	}
 }
 
 #armsspecs {
 	div { 
-		h1 { text-align: right; }
-		div.icons {
-			span.icon { background: none; } 
-		} 
-
+		h1 { text-align: right; } 
 	}
 }
