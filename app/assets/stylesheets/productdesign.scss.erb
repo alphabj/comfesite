@@ -4,17 +4,20 @@
 $h1color: #61b6da;
 $h2color: #2E2E2E;
 
-#prod_identity { height: 55px; }
+#prod_identity { 
+	height: 125px; 
+	background: url(<%= asset_path 'gradient_top.jpg' %>) bottom center no-repeat;
+}
 
 #product_details_links {
-	width: 950px;
+	width: 222px;
 	margin: 0 auto;
-	padding-bottom: 10px;
-	background: url(<%= asset_path 'gradient_top.jpg' %>) bottom center no-repeat;
+	padding-top: 10px;
+	
 	a { 
 		margin-right: 20px;
-		font-size: .9em;
-		font-weight: 200;
+		font-size: .8em;
+		font-weight: 100;
 		font-style: normal;
 		color: #999999;
 	} a:hover, a.selected { color: #555555; }
@@ -25,6 +28,7 @@ $h2color: #2E2E2E;
 	margin: 40px auto 70px auto;
 	
 	div {
+		
 		min-height: 650px;
 		background: url(<%= asset_path 'main_div_border.png' %>) bottom center no-repeat;
 		margin-bottom:70px;

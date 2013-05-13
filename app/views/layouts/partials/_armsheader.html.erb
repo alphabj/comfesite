@@ -2,14 +2,18 @@
 
 <div id="header" class="relative">
     
-    <%= render :partial => 'layouts/partials/topbar' %>
+    <div id="topBar">
+        <span>
+            <%= link_to "", root_path, :id => 'home', :class => 'nofloat' %>
+            
+        </span>
+    </div>
 
     <div class="center relative" id="prod_identity">
-        <img id="prod_logo" src="<%= asset_path('carms_logo.png') %>" width="360" height="58" class="absolute"/>
-        <h4 class="price absolute">coming soon</h4>
+        <img id="prod_logo" src="<%= asset_path('forerunner_logo.png') %>" width="250" height="74" />
+        <!-- <h4 class="price absolute">from 39.95</h4>  -->
+        <%= render :partial => 'layouts/partials/armstoplinks' %>
     </div>
-    
-    <%= render :partial => 'layouts/partials/armstoplinks' %>
 
     <!-- <ul id="socials" class="relative">
         <p id="social_comment" class="absolute">"awesome product! I bought extra for my kids. -Kyle, San Antonio"</p>
@@ -21,11 +25,19 @@
     </ul> -->
 
     <div class="center relative" id="prod_display">
-        <%= link_to "", "http://www.kickstarter.com", :id=>"kickstarter", :class=>"absolute", :target=>"_blank"%>
         <img src="<%= asset_path 'comfe_arms_banner_v2_01.png' %>" width="199" height="331" class="absolute rollin" style="left:-50px;"/>
         <img src="<%= asset_path 'comfe_arms_banner_v2_03.png' %>" width="365" height="331" class="absolute rollin" style="left:200px"/>
         <img src="<%= asset_path 'comfe_arms_banner_v2_05.png' %>" width="173" height="331" class="absolute rollin" style="left:625px"/>
 
-        <h1>For <em>people</em> with gadgets who get out.</h1>
+        <h1>For <em>people</em> who get out with gadgets.</h1>
+
+        <div id="product_selections">
+            <a class="selections" id="iPhone"></a>
+            <a class="selections" id="iPod"></a>
+        </div>
+
     </div>
+
+    <%= link_to "", "http://www.kickstarter.com", :id=>"kickstarter", :class=>"absolute", :target=>"_blank"%>
+  
 </div> 
