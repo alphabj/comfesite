@@ -27,7 +27,9 @@ Comfesite::Application.routes.draw do
   match 'armsbuy' => 'pages#armsbuy'
   match 'pmttest' => 'pages#armsbuytest'
 
-  match 'pmttest/:charge' => 'pages#charge_customer'
+  match 'pmttest/charge' => 'pages#charge_customer'
+
+
 
   # Sample of named route:
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase

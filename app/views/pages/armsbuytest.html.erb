@@ -24,7 +24,9 @@
         <noscript>JavaScript is not enabled on your browser. First enable JavaScript in your browser settings menu.</noscript>
     </span>
 
-    <form action="pmttest/:charge" method="POST" id="payment-form" >
+    <form action="pmttest/charge" method="POST" id="payment-form" >
+      <input type="hidden" id="stripe_card_token" name="stripe_card_token" />
+
       <div class="form-row">
         <label>
           <span>Card Number</span>
