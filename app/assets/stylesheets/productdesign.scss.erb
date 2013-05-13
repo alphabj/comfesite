@@ -23,13 +23,12 @@ $h2color: #2E2E2E;
 	} a:hover, a.selected { color: #555555; }
 }
 
-#armsdesign, #armsfeatures, #armsspecs {
+#armsdesign, #armsfeatures, #armsspecs, #sizinguide {
 	width: 950px;
 	margin: 40px auto 70px auto;
 	
 	div {
-		
-		min-height: 650px;
+		min-height: 600px;
 		background: url(<%= asset_path 'main_div_border.png' %>) bottom center no-repeat;
 		margin-bottom:70px;
 
@@ -37,7 +36,7 @@ $h2color: #2E2E2E;
 
 		h1 {
 			text-align: left;
-			font-size: 2.8em;
+			font-size: 2.5em;
 			margin-bottom: 5px;
 			color: $h1color;
 		}
@@ -125,6 +124,7 @@ $h2color: #2E2E2E;
 }
 #armsfeatures { 
 	div { 
+		h1 { text-align: center; }
 		min-height: auto;
 		height: auto; 
 		padding-bottom: 50px; 
@@ -137,6 +137,7 @@ $h2color: #2E2E2E;
 	div {
 		.tinyfeats { 
 			height: 25px;
+			background: url(<%= asset_path 'main_div_border.png' %>) top center no-repeat;
 			a { 
 				display: block; 
 				margin-left: 55px; 
@@ -156,8 +157,18 @@ $h2color: #2E2E2E;
 	.closinglinks { height: 50px; margin-top: 0px; }
 }
 
+#sizinguide {
+	div { 
+		div.icons {
+			span.icon { background: none; } 
+		} 
+
+	}
+}
+
 #armsspecs {
 	div { 
+		h1 { text-align: right; }
 		div.icons {
 			span.icon { background: none; } 
 		} 
